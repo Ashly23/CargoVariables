@@ -1,0 +1,22 @@
+<button nz-button nzType="primary" nzSize="small"><i nz-icon nzTheme="outline" nzType="plus" (click)="showModal()"></i></button>
+<nz-modal [(nzVisible)]="isVisible" nzTitle="Seleccionar Cargos" (nzOnCancel)="handleCancel()" (nzOnOk)="handleOk()">
+    <ng-container *nzModalContent>
+          <div nz-row [nzGutter]="8">
+            <div nz-col nzSpan="24">
+                    <div style="border-bottom: 1px solid rgb(233, 233, 233);">
+                        <label
+                          nz-checkbox
+                          [(ngModel)]="allChecked"
+                          (ngModelChange)="updateAllChecked()"
+                          [nzIndeterminate]="indeterminate"
+                        >
+                          Check all
+                        </label>
+                      </div>
+                      <br />
+                      <nz-checkbox-group [(ngModel)]="checkOptionsOne" (ngModelChange)="updateSingleChecked()"></nz-checkbox-group>
+            </div>
+        </div>
+
+    </ng-container>
+</nz-modal>
